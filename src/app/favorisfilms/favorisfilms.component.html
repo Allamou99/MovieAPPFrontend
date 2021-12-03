@@ -1,0 +1,20 @@
+<div fxLayout="row wrap" fxLayoutGap="16px grid">
+  <div fxFlex="33%" *ngFor="let film of this.favoriesMovie">
+      <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>Titre : {{film.Movie.Titre}}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="{{url + film.Movie._id + jpg}}" alt={{film._id}}>
+          <mat-card-content>
+            <p>
+              View so far : {{film.Movie.NombreVues}}
+            </p>
+          </mat-card-content>
+          <hr>
+          <mat-card-actions>
+              <button mat-button (click)="removeFavorie(film.Movie._id)">Remove from favories</button>
+              <button mat-button [routerLink]="['/film-details', film.Movie._id]">View details</button>    
+          </mat-card-actions>
+        </mat-card>
+  </div>
+  </div>

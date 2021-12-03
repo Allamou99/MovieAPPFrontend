@@ -1,0 +1,54 @@
+
+<!-->
+<mat-toolbar color="primary" fxLayoutAlign="center center">
+    <div class="toolbar-content">
+        <a mat-button routerLink="/home" routerLinkActive="active"> Home</a>
+        <a mat-button routerLink="/movies" routerLinkActive="active"> Categories de films</a>
+        <a mat-button routerLink="/movies" routerLinkActive="active"> Films</a>
+        <a mat-button routerLink="/chatbot" routerLinkActive="active"> Avis </a>
+        <a mat-button routerLink="/favoris" routerLinkActive="active"> Favoris </a>
+    </div>
+    <span class="example-spacer"></span>
+    <a mat-button routerLink="/signup" routerLinkActive="active"> Sign up</a>
+</mat-toolbar>
+
+<!---->
+<div>
+    <mat-toolbar color="primary">
+        <div fxShow="true" fxHide.gt-sm="true">
+            <button mat-icon-button (click)="sidenav.toggle()"  >
+              <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+        <a mat-button class="intro" routerLink="/">
+            <span>Movies watchers</span>
+          </a>
+        <span class="example-spacer"></span>
+        <div fxShow="true" fxHide.lt-md="true">
+            <a mat-button routerLink="/home" routerLinkActive="active"> Home</a>
+            <a mat-button routerLink="/movies" routerLinkActive="active"> Categories de films</a>
+            <a mat-button routerLink="/movies" routerLinkActive="active"> Films</a>
+            <a mat-button routerLink="/favoris" routerLinkActive="active"> Favoris </a>
+            <a *ngIf="!username" mat-button routerLink="/signup" routerLinkActive="active"> Sign up</a>
+            <a *ngIf="!username" mat-button routerLink="/login" routerLinkActive="active"> Login</a>
+            <span>{{username}}</span>
+            <a *ngIf="username" mat-button (click)="logout()"> Logout</a>
+        </div>
+    </mat-toolbar>
+      <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+      <div fxLayout="column">
+        <a mat-button routerLink="/home" routerLinkActive="active"> Home</a>
+        <a mat-button routerLink="/movies" routerLinkActive="active"> Categories de films</a>
+        <a mat-button routerLink="/movies" routerLinkActive="active" (click)="sidenav.toggle()"> Films</a>
+        <a mat-button routerLink="/chatbot" routerLinkActive="active"> Avis </a>
+        <a mat-button routerLink="/favoris" routerLinkActive="active"> Favoris </a>
+        <a mat-button routerLink="/signup" routerLinkActive="active" (click)="sidenav.toggle()"> Sign up</a>
+        <a mat-button routerLink="/login" routerLinkActive="active" (click)="sidenav.toggle()"> Login</a> 
+ 
+      </div>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>
+

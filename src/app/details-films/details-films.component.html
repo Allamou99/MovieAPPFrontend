@@ -1,0 +1,30 @@
+
+<div fxLayoutAlign="center center">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Titre : {{detailedFilm.Titre}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{url + detailedFilm._id + jpg}}" alt={{detailedFilm._id}}>
+        <mat-card-content>
+          <p>
+            View so far : {{detailedFilm.NombreVues}}
+          </p>
+          <p>
+            ReleaseDate : {{detailedFilm.ReleaseDate | date}}
+          </p>
+          <p>
+            Type : {{detailedFilm.TypeMovie.Type}}
+          </p>
+        </mat-card-content>
+        <hr>
+        <p *ngIf="detailedFilm.Feedbacks.length == 0">No feedbacks so far</p>
+        <mat-card-actions fxLayout="column">
+            <mat-form-field fxFlex="100%">
+                <input matInput placeholder="Feedback" type="text" required>
+              </mat-form-field>
+              <div>
+                <button fxFlex="100%" mat-raised-button color="primary">Comment</button>
+              </div>
+        </mat-card-actions>
+    </mat-card>
+</div>

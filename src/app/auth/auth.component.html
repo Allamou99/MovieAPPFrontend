@@ -1,0 +1,42 @@
+
+  <div class="signupForm" fxFlex="50%">
+    <div class="signupMessage">
+      <h1>Sign up </h1>
+    </div>
+    <div fxLayout="column" form novalidate [formGroup]="Authform">
+      <mat-form-field>
+          <input matInput formControlName="mail" placeholder="Email" type="text" required>
+          <mat-error *ngIf="Authform.controls.mail.errors?.required">Email is required</mat-error>
+          <mat-error *ngIf="Authform.controls.mail.errors?.email">Format d'email incorrect</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="username" placeholder="Username" type="text" required>
+          <mat-error *ngIf="Authform.controls.username.errors?.required">Username is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="firstname" placeholder="First Name" type="text" required>
+          <mat-error *ngIf="Authform.controls.firstname.errors?.required">First Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="lastname" placeholder="Last Name" type="text" required>
+          <mat-error *ngIf="Authform.controls.lastname.errors?.required">Last Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="password" placeholder="Password" type="password" required>
+          <mat-error *ngIf="Authform.controls.password.errors?.required && Authform.controls.password.touched">Password is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="Confirmpassword" placeholder="Confirm Password" type="password" required>
+          <mat-error *ngIf="Authform.controls.Confirmpassword.errors?.required && Authform.controls.Confirmpassword.touched ">
+            Please confirm your password
+          </mat-error>
+          <mat-error *ngIf="this.ConfirmationWrong()">
+            You didnt confirm your password correctly
+          </mat-error>
+        </mat-form-field>
+        <button [disabled]="this.Authform.invalid || ConfirmationWrong()" mat-raised-button color="primary" (click)="onSubmit()">S'inscrire</button>
+  </div>
+  </div>
+
+
+

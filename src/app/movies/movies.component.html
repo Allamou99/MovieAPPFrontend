@@ -1,0 +1,29 @@
+
+<div class="searchbar">
+    <mat-form-field>
+        <input matInput placeholder="Chercher un film" [(ngModel)]="searchedMovie"  (ngModelChange)="onChange($event)" type="text" required>
+      </mat-form-field>
+</div>
+<div fxLayout="row wrap" fxLayoutGap="16px grid">
+<div fxFlex="33%" *ngFor="let film of this.films">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Titre : {{film.Titre}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{url + film._id + jpg}}" alt={{film._id}}>
+        <mat-card-content>
+          <p>
+            View so far : {{film.NombreVues}}
+          </p>
+        </mat-card-content>
+        <hr>
+        <mat-card-actions>
+            <button mat-button (click)="addTofavories(film._id)">Add to favories</button>
+            <button mat-button [routerLink]="['/film-details', film._id]">View details</button>          
+        </mat-card-actions>
+      </mat-card>
+</div>
+</div>
+
+
+
