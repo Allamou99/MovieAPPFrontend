@@ -1,27 +1,7 @@
-# AngularS5
+Il s'agit d'un projet de gestion de film
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+Un utilisateur devra se connecter pour consulter ses favoris ou pour en ajouter un film à ses siens
 
-## Development server
+Un utilisateur peut s'inscrire , peut consulter la liste des films et la liste des types de film present dans l'application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+La connexion est assuré par un JWT avec une durée de 3h , au bout de 3h l'utilisateur va etre automatiquement deconnecté
