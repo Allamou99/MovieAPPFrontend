@@ -2,7 +2,7 @@
     <div class="signupMessage">
       <h1>Login </h1>
     </div>
-    <div fxLayout="column" form novalidate [formGroup]="LoginForm">
+    <div fxLayout="column" form novalidate [formGroup]="LoginForm" id="loginform">
         <mat-form-field>
           <input matInput formControlName="username" placeholder="Username" type="text" required>
           <mat-error *ngIf="LoginForm.controls.username.errors?.required">Username is required</mat-error>

@@ -37,7 +37,7 @@ export class AuthService {
   IsAuthenticatedInNeed: boolean = false;
   
   constructor(private http : HttpClient,
-    private ProcessHttpErrorsService : ProcessHttpErrorsService) { 
+    /*private ProcessHttpErrorsService : ProcessHttpErrorsService*/) { 
   }
 
   checkJWTtoken() {
@@ -102,7 +102,7 @@ export class AuthService {
       this.storeUserCredentials({username: user.username, token: res.token});
           return {'success': true, 'username': user.username };
     }), 
-    catchError(error => this.ProcessHttpErrorsService.handleError(error)));
+    /*catchError(error => this.ProcessHttpErrorsService.handleError(error))*/);
   }
 
   logOut() {
